@@ -4,23 +4,13 @@ The project uses multiple regression models, selects the best-performing model, 
 **📌 Project Features**
 
 📊 Exploratory Data Analysis (EDA)
-
 🔍 Feature Engineering & Preprocessing
-
 🤖 Multiple ML Models:
-
 Linear Regression
-
 Ridge Regression
-
 Lasso Regression
-
 Random Forest Regressor
-
 Gradient Boosting Regressor
-
 ⚙️ Hyperparameter Tuning using GridSearchCV
-
 🏆 Best Model Selection using R² Score
-
 💰 Price formatting in ₹ Lakhs / Crores
