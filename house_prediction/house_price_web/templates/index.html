@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>House Price Prediction</title>
+    <link rel="stylesheet" href= "{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>🏠 House Price Prediction</h1>
+    <p>Enter house details to predict price</p>
+
+    <form action="/predict" method="post" onsubmit="return validateForm()">
+
+        <div class="form-group">
+            <label>Area (sq ft)</label>
+            <input type="number" name="area" id="area" required>
+        </div>
+
+        <div class="form-group">
+            <label>Bedrooms</label>
+            <input type="number" name="bedrooms" id="bedrooms" required>
+        </div>
+
+        <div class="form-group">
+            <label>Bathrooms</label>
+            <input type="number" name="bathrooms" id="bathrooms" required>
+        </div>
+
+        <div class="form-group">
+            <label>Stories</label>
+            <input type="number" name="stories" id="stories" required>
+        </div>
+
+        <div class="form-group">
+            <label>Parking</label>
+            <input type="number" name="parking" id="parking" required>
+        </div>
+
+        <div class="form-group">
+            <label>Main Road</label>
+            <select name="mainroad">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Guest Room</label>
+            <select name="guestroom">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Basement</label>
+            <select name="basement">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+
+        <div class = "form-group">
+            <label>Hot Water Heating</label>
+            <select name="hotwaterheating">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+        </div>
+
+        <div class="form-group">
+            <label>Air Conditioning</label>
+            <select name="airconditioning">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+
+        <div class = "form-group">
+            <label>Prefabricated</label>
+            <select name="prefabricated">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+            <div class = "form-group">
+                <label>Furnishing Status</label>
+                <select name="furnishingstatus">
+                    <option value="furnished">Furnished</option>
+                    <option value="semi-furnished">Semi-Furnished</option>
+                    <option value="unfurnished">Unfurnished</option>
+                </select>
+
+            </div>
+
+        </div>
+
+        <button type="submit">🔍 Predict Price</button>
+    </form>
+
+    {% if result %}
+    <div class="result">
+        {{ result }}
+    </div>
+    {% endif %}
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
